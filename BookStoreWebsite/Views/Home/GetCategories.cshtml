@@ -1,0 +1,13 @@
+﻿
+
+<div class="category-list">
+    <h3>Chủ đề</h3>
+    <ul style="list-style:none">
+        @foreach (var category in Model)
+        {
+            <li>
+                <a href="@Url.Action("FilteredBooks", "Home", new { MaCD = category.MaCD })">@category.TenChuDe</a>
+            </li>
+        }
+    </ul>
+</div>

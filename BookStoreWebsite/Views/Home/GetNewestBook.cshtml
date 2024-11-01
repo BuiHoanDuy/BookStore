@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "GetNewestBook";
+    Layout = "~/Views/Shared/layout.cshtml";
+}
+
+<h2>TOP 5 SÁCH MỚI NHẤT</h2>
+
+
+<div class="box">
+    @foreach (var book in Model)
+    {
+        <div class="movie book-list">
+            <div class="movie-image">
+                <a href="@Url.Action("ProductDetails", "Home", new { id = book.Masach })">
+                    <img src="~/Content/image/@book.Anhbia" alt="@book.Tensach" />
+                </a>
+            </div>
+            <div class="details">
+                <p style="font-size:larger"><strong> @book.Tensach</strong></p>
+                <p><strong>Giá:</strong> @book.Giaban.ToString("C")</p>
+            </div>
+            <div class="rating">
+                <p>RATING</p>
+                <div class="stars">
+                    <div class="stars-in"> </div>
+                </div>
+                <span class="comments">12</span> <!-- Chỗ này có thể thay bằng comment thực tế nếu có -->
+            </div>
+        </div>
+    }
+</div>

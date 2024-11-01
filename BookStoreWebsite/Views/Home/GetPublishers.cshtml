@@ -1,0 +1,12 @@
+﻿
+<div class="publisher-list">
+    <h3>Nhà xuất bản</h3>
+    <ul>
+        @foreach (var publisher in Model)
+        {
+            <li>
+                <a href="@Url.Action("FilteredBooks", "Home", new { MaNXB = publisher.MaNXB })">@publisher.TenNXB</a>
+            </li>
+        }
+    </ul>
+</div>

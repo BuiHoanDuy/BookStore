@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "FilteredBooks";
+    Layout = "~/Views/Shared/layout.cshtml";
+}
+
+<div class="box">
+    @foreach (var book in Model)
+    {
+        <div class="movie">
+            <div class="movie-image">
+                <a href="@Url.Action("ProductDetails", "Home", new { id = book.Masach })"><img src="~/Content/image/@book.Anhbia" alt="@book.Tensach" /></a>
+            </div>
+            <div class="details">
+                <p style="font-size:larger"><strong> @book.Tensach</strong></p>
+                <p><strong>Giá:</strong> @book.Giaban.ToString("C")</p>
+                @*<p><strong>Description:</strong> @book.Mota</p>
+        <p><strong>Publisher:</strong> @book.NHAXUATBAN.TenNXB</p>
+        <p><strong>Category:</strong> @book.CHUDE.TenChuDe</p>*@
+            </div>
+            <div class="rating">
+                <p>RATING</p>
+                <div class="stars">
+                    <div class="stars-in"> </div>
+                </div>
+                <span class="comments">12</span>
+            </div>
+        </div>
+    }
+</div>
