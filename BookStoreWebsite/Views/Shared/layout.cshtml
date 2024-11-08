@@ -38,6 +38,17 @@
                     <li><a href="@Url.Action("GetNewestBook", "Home")">MỚI NHẤT</a></li>
                     <li><a href="#">ĐÁNH GIÁ CAO NHẤT</a></li>
                     <li><a href="#">HOT</a></li>
+                    <li><a href="@Url.Action("Giohang", "GioHang")"> @{Html.RenderAction("GioHangPartial", "Giohang");} </a></li>
+                    @if (Session["Taikhoan"] != null)
+                    {
+                        var user = (BookStoreWebsite.Models.KHACHHANG)Session["Taikhoan"];
+                        <li style="color: green">Họ tên: @user.HoTen</li>
+                    }
+                    else
+                    {
+                        <li>Chưa đăng nhập</li>
+                    }
+
                 </ul>
                 <div id="search">
                     <form action="#" method="get" accept-charset="utf-8">

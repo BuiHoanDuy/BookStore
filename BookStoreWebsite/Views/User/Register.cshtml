@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/layout.cshtml";
+}
+
+<h1 style="text-align: center; color: yellow">ĐĂNG KÝ THÀNH VIÊN</h1>
+<table align="center">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <tr style="height: 40px">
+            <td>Họ tên khách hàng: </td>
+            <td>
+                @Html.TextBox("HotenKH")
+                @ViewData["Loi1"]
+            </td>
+        </tr>
+
+        <tr style="height: 40px">
+            <td>Tên đăng nhập: </td>
+            <td>
+                @Html.TextBox("TenDN")
+                @ViewData["Loi2"]
+            </td>
+        </tr>
+
+        <tr style="height: 40px">
+            <td>Mật khẩu: </td>
+            <td>
+                @Html.TextBox("Matkhau")
+                @ViewData["Loi3"]
+            </td>
+        </tr>
+
+        <tr style="height: 40px">
+            <td>Mật khảu nhập lại: </td>
+            <td>
+                @Html.TextBox("Matkhaunhaplai")
+                @ViewData["Loi4"]
+            </td>
+        </tr>
+
+        <tr style="height: 40px">
+            <td>Email: </td>
+            <td>
+                @Html.TextBox("Email")
+                @ViewData["Loi5"]
+            </td>
+        </tr>
+
+        <tr style="height: 40px">
+            <td>Điện thoại: </td>
+            <td>
+                @Html.TextBox("Dienthoai")
+                @ViewData["Loi6"]
+            </td>
+        </tr>
+
+        <tr style="height: 40px">
+            <td>Ngày sinh: </td>
+            <td>
+                <input type="date" name="Ngaysinh" />
+            </td>
+        </tr>
+
+        <tr style="height: 40px">
+            <td></td>
+            <td>
+                <input type="submit" value="Đăng ký" />
+            </td>
+        </tr>
+
+        <tr style="height:40px">
+            <td>Nếu bạn đã có tài khoản thì hãy <a href="/User/Login" style="color: red"> Đăng nhập </a>  tại đây</td>
+        </tr>
+    }
+
+</table>

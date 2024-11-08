@@ -126,7 +126,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GiohangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -154,6 +156,7 @@
     <Compile Include="Models\DONDATHANG.cs">
       <DependentUpon>dbQLBansach.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\KHACHHANG.cs">
       <DependentUpon>dbQLBansach.tt</DependentUpon>
     </Compile>
@@ -258,6 +261,12 @@
     <Content Include="Views\Home\FilteredBooks.cshtml" />
     <Content Include="Views\Home\ProductDetails.cshtml" />
     <Content Include="Views\Home\GetNewestBook.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\Giohang\GioHang.cshtml" />
+    <Content Include="Views\Giohang\GioHangPartial.cshtml" />
+    <Content Include="Views\Giohang\DatHang.cshtml" />
+    <Content Include="Views\Giohang\Xacnhandonhang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

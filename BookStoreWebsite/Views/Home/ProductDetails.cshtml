@@ -14,6 +14,7 @@
         <p><strong>Mô tả:</strong> @Model.Mota</p>
         <p><strong>Nhà xuất bản:</strong> @Model.NHAXUATBAN.TenNXB</p>
         <p><strong>Chủ đề:</strong> @Model.CHUDE.TenChuDe</p>
-    <button style="background-color: orangered; color:aliceblue"><strong>Mua ngay</strong></button>
+        <button onclick="window.location.href='@Url.Action("ThemGioHang", "Giohang", new {@iMasach = Model.Masach, @strURL = "/Giohang/GioHang"})'" style="background-color: orangered; color:aliceblue"><strong>Mua ngay</strong></button>
+        @*<a href="@Url.Action("ThemGioHang", "Giohang", new { iMaSach = Model.Masach, @strURL = "/Giohang/GioHang" })">Buy Now</a>*@
     </div>
 </div>

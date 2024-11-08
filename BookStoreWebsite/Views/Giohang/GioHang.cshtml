@@ -1,0 +1,57 @@
+﻿@using BookStoreWebsite.Models
+@model List<GioHang>
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/layout.cshtml";
+}
+<h2 style="text-align:center">THÔNG TIN GIỎ HÀNG</h2>
+
+<table align="center" border="1">
+    <tr style="text-align:center; font-weight:bold">
+        <td>Ảnh bìa</td>
+        <td>Tên sách</td>
+        <td>Đơn giá</td>
+        <td>Số lượng</td>
+        <td>Thành tiền</td>
+        <td></td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr style="text-align:center">
+            <td><img src="~/Content/image/@item.sAnhbia" /></td>
+            <td>@item.sTensach</td>
+            <td>@String.Format("{0:0,0}", item.dDongia)</td>
+            <td>
+                @using (Html.BeginForm("CapNhatGioHang", "GioHang", FormMethod.Post))
+                {
+                    <input type="hidden" name="iMaSP" value="@item.iMasach" />
+                    <input type="number" name="txtSoLuong" value="@item.iSoluong" min="1" />
+                    <input type="submit" value="Cập Nhật" />
+                }
+            </td>
+            <td>@String.Format("{0:0,0}", item.dThanhtien)</td>
+            <td>
+                <a href="@Url.Action("ProductDetails", "Home", new { id = item.iMasach })">Chi tiết</a> |
+                @Html.ActionLink("Xóa", "XoaGiohang", new { iMaSp = item.iMasach })
+            </td>
+        </tr>
+    }
+    <tr>
+        <td colspan="4" style="font-weight: bold; text-align:right; color:red">
+            Số lượng sách: @ViewBag.TongSoluong
+        </td>
+        <td colspan="5" style="font-weight: bold; text-align:right; color:red">
+            Tổng tiền: @String.Format("{0:0,0}", ViewBag.TongTien) VNĐ
+        </td>
+    </tr>
+    <tr>
+        <td colspan="9">
+            @Html.ActionLink("Xóa Giỏ Hàng", "XoaTatCa");
+        </td>
+    </tr>
+    <tr>
+        <td colspan="9">
+            @Html.ActionLink("Đặt hàng", "Dathang", "Giohang");
+        </td>
+    </tr>
+</table>

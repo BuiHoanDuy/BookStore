@@ -13,6 +13,7 @@ namespace BookStoreWebsite.Controllers
         public ActionResult Index()
         {
             var books = db.SACHes.Include("CHUDE").Include("NHAXUATBAN").Where(b => b.Anhbia != null && b.Tensach != null).ToList();
+            //Session.Clear();
             return View(books);
         }
         public ActionResult GetNewestBook()
