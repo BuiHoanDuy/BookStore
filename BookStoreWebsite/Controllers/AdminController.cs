@@ -251,7 +251,7 @@ namespace BookStoreWebsite.Controllers
         public ActionResult ThongKeSach()
         {
             var bookStatistics = db.SACHes
-           .GroupBy(s => s.MaCD)
+           .GroupBy(s => s.CHUDE.TenChuDe)
            .ToDictionary(
                g => g.Key?.ToString() ?? "Unknown", // Convert nullable int to string, handle null as "Unknown"
                g => g.Count()

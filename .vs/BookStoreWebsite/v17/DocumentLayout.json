@@ -3,11 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\Aus\\Documents\\Subjects\\LapTrinhWeb\\ThucHanh\\BookStoreWebsite\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F0A76AD6-3119-46B0-93C1-033C5D6DE56A}|BookStoreWebsite\\BookStoreWebsite.csproj|C:\\Users\\Aus\\Documents\\Subjects\\LapTrinhWeb\\ThucHanh\\BookStoreWebsite\\bookstorewebsite\\views\\admin\\thongkesach.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{F0A76AD6-3119-46B0-93C1-033C5D6DE56A}|BookStoreWebsite\\BookStoreWebsite.csproj|c:\\users\\aus\\documents\\subjects\\laptrinhweb\\thuchanh\\bookstorewebsite\\bookstorewebsite\\views\\admin\\thongkesach.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F0A76AD6-3119-46B0-93C1-033C5D6DE56A}|BookStoreWebsite\\BookStoreWebsite.csproj|solutionrelative:bookstorewebsite\\views\\admin\\thongkesach.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F0A76AD6-3119-46B0-93C1-033C5D6DE56A}|BookStoreWebsite\\BookStoreWebsite.csproj|c:\\users\\aus\\documents\\subjects\\laptrinhweb\\thuchanh\\bookstorewebsite\\bookstorewebsite\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{F0A76AD6-3119-46B0-93C1-033C5D6DE56A}|BookStoreWebsite\\BookStoreWebsite.csproj|C:\\Users\\Aus\\Documents\\Subjects\\LapTrinhWeb\\ThucHanh\\BookStoreWebsite\\bookstorewebsite\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0A76AD6-3119-46B0-93C1-033C5D6DE56A}|BookStoreWebsite\\BookStoreWebsite.csproj|solutionrelative:bookstorewebsite\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0A76AD6-3119-46B0-93C1-033C5D6DE56A}|BookStoreWebsite\\BookStoreWebsite.csproj|C:\\Users\\Aus\\Documents\\Subjects\\LapTrinhWeb\\ThucHanh\\BookStoreWebsite\\bookstorewebsite\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F0A76AD6-3119-46B0-93C1-033C5D6DE56A}|BookStoreWebsite\\BookStoreWebsite.csproj|solutionrelative:bookstorewebsite\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F0A76AD6-3119-46B0-93C1-033C5D6DE56A}|BookStoreWebsite\\BookStoreWebsite.csproj|C:\\Users\\Aus\\Documents\\Subjects\\LapTrinhWeb\\ThucHanh\\BookStoreWebsite\\bookstorewebsite\\views\\admin\\suasach.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F0A76AD6-3119-46B0-93C1-033C5D6DE56A}|BookStoreWebsite\\BookStoreWebsite.csproj|solutionrelative:bookstorewebsite\\views\\admin\\suasach.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F0A76AD6-3119-46B0-93C1-033C5D6DE56A}|BookStoreWebsite\\BookStoreWebsite.csproj|C:\\Users\\Aus\\Documents\\Subjects\\LapTrinhWeb\\ThucHanh\\BookStoreWebsite\\bookstorewebsite\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F0A76AD6-3119-46B0-93C1-033C5D6DE56A}|BookStoreWebsite\\BookStoreWebsite.csproj|solutionrelative:bookstorewebsite\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F0A76AD6-3119-46B0-93C1-033C5D6DE56A}|BookStoreWebsite\\BookStoreWebsite.csproj|C:\\Users\\Aus\\Documents\\Subjects\\LapTrinhWeb\\ThucHanh\\BookStoreWebsite\\bookstorewebsite\\views\\admin\\xoasach.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -46,7 +46,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "_LayoutAdmin.cshtml",
               "DocumentMoniker": "C:\\Users\\Aus\\Documents\\Subjects\\LapTrinhWeb\\ThucHanh\\BookStoreWebsite\\BookStoreWebsite\\Views\\Shared\\_LayoutAdmin.cshtml",
               "RelativeDocumentMoniker": "BookStoreWebsite\\Views\\Shared\\_LayoutAdmin.cshtml",
@@ -54,8 +54,7 @@
               "RelativeToolTip": "BookStoreWebsite\\Views\\Shared\\_LayoutAdmin.cshtml",
               "ViewState": "AgIAABsAAAAAAAAAAAAAACIAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-15T08:38:20.574Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T08:38:20.574Z"
             },
             {
               "$type": "Document",
@@ -72,7 +71,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Suasach.cshtml",
               "DocumentMoniker": "C:\\Users\\Aus\\Documents\\Subjects\\LapTrinhWeb\\ThucHanh\\BookStoreWebsite\\BookStoreWebsite\\Views\\Admin\\Suasach.cshtml",
               "RelativeDocumentMoniker": "BookStoreWebsite\\Views\\Admin\\Suasach.cshtml",
@@ -96,7 +95,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Chitietsach.cshtml",
               "DocumentMoniker": "C:\\Users\\Aus\\Documents\\Subjects\\LapTrinhWeb\\ThucHanh\\BookStoreWebsite\\BookStoreWebsite\\Views\\Admin\\Chitietsach.cshtml",
               "RelativeDocumentMoniker": "BookStoreWebsite\\Views\\Admin\\Chitietsach.cshtml",
@@ -108,15 +107,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Users\\Aus\\Documents\\Subjects\\LapTrinhWeb\\ThucHanh\\BookStoreWebsite\\BookStoreWebsite\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "BookStoreWebsite\\Controllers\\AdminController.cs",
               "ToolTip": "C:\\Users\\Aus\\Documents\\Subjects\\LapTrinhWeb\\ThucHanh\\BookStoreWebsite\\BookStoreWebsite\\Controllers\\AdminController.cs",
               "RelativeToolTip": "BookStoreWebsite\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAAPEAAAAAAAAAAAAswAYBAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAO4AAAAAAAAAAAAswP0AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T02:41:01.778Z"
+              "WhenOpened": "2024-11-14T02:41:01.778Z",
+              "EditorCaption": ""
             }
           ]
         }
