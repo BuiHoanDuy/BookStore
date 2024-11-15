@@ -79,3 +79,9 @@ C:\Users\Aus\Documents\Subjects\LapTrinhWeb\ThucHanh\BookStoreWebsite\BookStoreW
 C:\Users\Aus\Documents\Subjects\LapTrinhWeb\ThucHanh\BookStoreWebsite\BookStoreWebsite\obj\Debug\BookStoreWebsite.pdb
 C:\Users\Aus\Documents\Subjects\LapTrinhWeb\ThucHanh\BookStoreWebsite\BookStoreWebsite\bin\EntityFramework.dll
 C:\Users\Aus\Documents\Subjects\LapTrinhWeb\ThucHanh\BookStoreWebsite\BookStoreWebsite\bin\EntityFramework.xml
+C:\Users\Aus\Documents\Subjects\LapTrinhWeb\ThucHanh\BookStoreWebsite\BookStoreWebsite\bin\PagedList.dll
+C:\Users\Aus\Documents\Subjects\LapTrinhWeb\ThucHanh\BookStoreWebsite\BookStoreWebsite\bin\PagedList.Mvc.dll
+C:\Users\Aus\Documents\Subjects\LapTrinhWeb\ThucHanh\BookStoreWebsite\BookStoreWebsite\bin\PagedList.xml
+C:\Users\Aus\Documents\Subjects\LapTrinhWeb\ThucHanh\BookStoreWebsite\BookStoreWebsite\bin\PagedList.Mvc.xml
+C:\Users\Aus\Documents\Subjects\LapTrinhWeb\ThucHanh\BookStoreWebsite\BookStoreWebsite\bin\EntityFramework.SqlServer.dll
+C:\Users\Aus\Documents\Subjects\LapTrinhWeb\ThucHanh\BookStoreWebsite\BookStoreWebsite\bin\EntityFramework.SqlServer.xml

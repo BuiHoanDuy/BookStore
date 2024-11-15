@@ -1,4 +1,6 @@
-﻿
+﻿@using BookStoreWebsite.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<SACH>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/layout.cshtml";
@@ -25,7 +27,7 @@
                     </div>
                     <div class="details">
                         <p style="font-size:larger"><strong> @book.Tensach</strong></p>
-                        <p><strong>Giá:</strong> @book.Giaban.ToString("C")</p>
+                        <p><strong>Giá:</strong> @book.Giaban.ToString()</p>
                     </div>
                     <div class="rating">
                         <p>RATING</p>
@@ -41,3 +43,19 @@
         <div class="cl">&nbsp;</div>
     </div>
 </div>
+Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang" style="margin-left: 300px">
+    @Html.PagedListPager(Model,page => Url.Action("Index", new {page = page}))
+</div>
+<style>
+        .MenuTrang li{
+            display: inline;
+            padding: 10px;
+            background-color: aliceblue;
+            font-size: large;
+            font-weight: bold;
+            justify-content: center;
+            border-left: solid;
+            border-color: black;
+        }
+</style>

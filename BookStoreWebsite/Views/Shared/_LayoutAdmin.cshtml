@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Book Store Admin</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="~/Content/css/style.css" type="text/css" media="all" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-func.js"></script>
+
+    <script src="~/tinymce/js/tinymce/tinymce.min.js"> </script>
+    <script>tinymce.init({ selector: "textarea" });</script>
+    <!--[if IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
+</head>
+<body>
+    <!-- START PAGE SOURCE -->
+    <div id="shell">
+        <div id="header">
+            <h1 id="logo"><a href="#">BOOK STORE</a></h1>
+            <div class="social">
+                <span>THEO DÕI:</span>
+                <ul>
+                    <li><a class="twitter" href="#">twitter</a></li>
+                    <li><a class="facebook" href="#">facebook</a></li>
+                    <li><a class="vimeo" href="#">vimeo</a></li>
+                    <li><a class="rss" href="#">rss</a></li>
+                </ul>
+            </div>
+            <div id="navigation">
+                <ul>
+                    <li>
+                        @Html.ActionLink("TRANG CHỦ", "Index", "Admin")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Quản lý chủ đề", "Sanpham", "Admin")
+                    </li>
+                    <li>
+                        @Html.ActionLink("quản lý nhà xuất bản", "Nhaxuatban", "Admin")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Quản lý sách", "Sach", "Admin")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Thống kê sách", "ThongKeSach", "Admin")
+                    </li>
+                </ul>
+            </div>
+
+            <div>@RenderBody() </div>
+
+            <div class="cl">&nbsp;</div>
+            <div id="footer">
+                <p class="lf">Copyright &copy; 2010 <a href="#">SiteName</a> - All Rights Reserved</p>
+                <p class="rf"><a href="http://all-free-download.com/free-website-templates/">Free CSS Templates</a> by <a href="http://chocotemplates.com/">ChocoTemplates.com</a></p>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+        <!-- END PAGE SOURCE -->
+        <div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div>
+        </div>
+</body>
+</html>

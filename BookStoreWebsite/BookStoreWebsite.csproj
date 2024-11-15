@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -45,10 +46,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -126,11 +136,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\GiohangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Admin.cs">
+      <DependentUpon>dbQLBansach.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CHITIETDONTHANG.cs">
       <DependentUpon>dbQLBansach.tt</DependentUpon>
@@ -176,8 +190,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\ie6.css" />
+    <Content Include="Content\css\main.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\util.css" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Content\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="Content\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="Content\fonts\montserrat\OFL.txt" />
     <Content Include="Content\image\am-nhac.jpg" />
+    <Content Include="Content\image\bg-01.jpg" />
     <Content Include="Content\image\body-bg.gif" />
     <Content Include="Content\image\chi-pheo.jpg" />
     <Content Include="Content\image\coming-soon1.jpg" />
@@ -188,6 +212,7 @@
     <Content Include="Content\image\de-men.png" />
     <Content Include="Content\image\du-lich.jpg" />
     <Content Include="Content\image\favicon.ico" />
+    <Content Include="Content\image\icons\favicon.ico" />
     <Content Include="Content\image\image-hover.png" />
     <Content Include="Content\image\khoa-hoc.jpg" />
     <Content Include="Content\image\lich-su-vn.jpg" />
@@ -208,6 +233,37 @@
     <Content Include="Content\image\truyen-kieu.jpg" />
     <Content Include="Content\image\van-hoc-dan-gian.jpg" />
     <Content Include="Content\image\y-hoc.jpg" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\vendor\animate\animate.css" />
+    <Content Include="Content\vendor\animsition\css\animsition.css" />
+    <Content Include="Content\vendor\animsition\css\animsition.min.css" />
+    <Content Include="Content\vendor\animsition\js\animsition.js" />
+    <Content Include="Content\vendor\animsition\js\animsition.min.js" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\vendor\bootstrap\js\popper.js" />
+    <Content Include="Content\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Content\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Content\vendor\countdowntime\countdowntime.js" />
+    <Content Include="Content\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Content\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Content\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="Content\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="Content\vendor\daterangepicker\moment.js" />
+    <Content Include="Content\vendor\daterangepicker\moment.min.js" />
+    <Content Include="Content\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Content\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Content\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Content\vendor\select2\select2.css" />
+    <Content Include="Content\vendor\select2\select2.js" />
+    <Content Include="Content\vendor\select2\select2.min.css" />
+    <Content Include="Content\vendor\select2\select2.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Models\dbQLBansach.Context.tt">
@@ -233,6 +289,85 @@
     <Content Include="Models\dbQLBansach.edmx.diagram">
       <DependentUpon>dbQLBansach.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Content\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Content\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="Content\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="Content\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="Content\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="Content\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="Content\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="Content\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Content\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="Content\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="Content\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Content\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="Content\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Content\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="Content\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="Content\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="Content\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Content\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="Content\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Content\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="Content\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Content\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="Content\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Content\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Content\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Content\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Content\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Content\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Content\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Content\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Content\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Content\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Content\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Content\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Content\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Content\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Content\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Content\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Content\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Content\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Content\fonts\poppins\Poppins-ThinItalic.ttf" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-1.4.2.min.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
@@ -245,7 +380,128 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="tinymce\js\tinymce\icons\default\icons.min.js" />
+    <Content Include="tinymce\js\tinymce\models\dom\model.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\accordion\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\codesample\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\js\emojiimages.js" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\js\emojiimages.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\js\emojis.js" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\js\emojis.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\ar.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\bg_BG.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\ca.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\cs.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\da.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\de.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\el.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\en.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\es.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\eu.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\fa.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\fi.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\fr_FR.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\he_IL.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\hi.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\hr.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\hu_HU.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\id.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\it.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\ja.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\kk.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\ko_KR.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\ms.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\nb_NO.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\nl.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\pl.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\pt_BR.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\pt_PT.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\ro.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\ru.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\sk.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\sl_SI.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\sv_SE.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\th_TH.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\tr.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\uk.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\vi.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\zh_CN.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\js\i18n\keynav\zh_TW.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\quickbars\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\skins\content\dark\content.js" />
+    <Content Include="tinymce\js\tinymce\skins\content\dark\content.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\content\default\content.js" />
+    <Content Include="tinymce\js\tinymce\skins\content\default\content.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\content\document\content.js" />
+    <Content Include="tinymce\js\tinymce\skins\content\document\content.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\content\tinymce-5-dark\content.js" />
+    <Content Include="tinymce\js\tinymce\skins\content\tinymce-5-dark\content.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\content\tinymce-5\content.js" />
+    <Content Include="tinymce\js\tinymce\skins\content\tinymce-5\content.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\content\writer\content.js" />
+    <Content Include="tinymce\js\tinymce\skins\content\writer\content.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide-dark\content.inline.js" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide-dark\content.inline.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide-dark\content.js" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide-dark\content.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide-dark\skin.js" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide-dark\skin.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide-dark\skin.shadowdom.js" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide-dark\skin.shadowdom.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide\content.inline.js" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide\content.inline.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide\content.js" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide\content.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide\skin.js" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide\skin.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide\skin.shadowdom.js" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide\skin.shadowdom.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5-dark\content.inline.js" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5-dark\content.inline.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5-dark\content.js" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5-dark\content.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5-dark\skin.js" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5-dark\skin.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5-dark\skin.shadowdom.js" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5-dark\skin.shadowdom.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5\content.inline.js" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5\content.inline.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5\content.js" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5\content.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5\skin.js" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5\skin.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5\skin.shadowdom.js" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5\skin.shadowdom.min.css" />
+    <Content Include="tinymce\js\tinymce\themes\silver\theme.min.js" />
+    <Content Include="tinymce\js\tinymce\tinymce.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -267,6 +523,18 @@
     <Content Include="Views\Giohang\GioHangPartial.cshtml" />
     <Content Include="Views\Giohang\DatHang.cshtml" />
     <Content Include="Views\Giohang\Xacnhandonhang.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Sach.cshtml" />
+    <Content Include="Views\Admin\ThemmoiSach.cshtml" />
+    <Content Include="tinymce\CHANGELOG.md" />
+    <Content Include="tinymce\js\tinymce\langs\README.md" />
+    <Content Include="tinymce\js\tinymce\license.md" />
+    <Content Include="Views\Admin\Chitietsach.cshtml" />
+    <Content Include="Views\Admin\Xoasach.cshtml" />
+    <Content Include="Views\Admin\Suasach.cshtml" />
+    <Content Include="Views\Admin\ThongKeSach.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -283,7 +551,11 @@
     <Content Include="Scripts\jquery-3.7.0.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="tinymce\js\tinymce\tinymce.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -318,7 +590,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

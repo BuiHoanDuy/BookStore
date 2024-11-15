@@ -1,0 +1,42 @@
+﻿@model Dictionary<string, int>
+@{
+    ViewBag.Title = "Thống kê sách";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    var bookStatistics = ViewBag.BookStatistics;
+}
+
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Canvas for the chart -->
+<canvas id="bookChart" width="400" height="200"></canvas>
+
+<script>
+    // Prepare data for the chart from the dictionary
+    const labels = @Html.Raw(Json.Encode(Model.Keys));
+    const data = @Html.Raw(Json.Encode(Model.Values));
+
+    // Initialize Chart.js
+    const ctx = document.getElementById('bookChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Số lượng sách',
+                data: data,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

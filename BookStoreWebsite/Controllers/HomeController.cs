@@ -5,16 +5,20 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using PagedList;
+using PagedList.Mvc;
 namespace BookStoreWebsite.Controllers
 {
     public class HomeController : Controller
     {
         private QLBansachEntities db = new QLBansachEntities();
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
+            int pageSize = 5;
+            int pageNum = (page ?? 1);
             var books = db.SACHes.Include("CHUDE").Include("NHAXUATBAN").Where(b => b.Anhbia != null && b.Tensach != null).ToList();
             //Session.Clear();
-            return View(books);
+            return View(books.ToPagedList(pageNum, pageSize));
         }
         public ActionResult GetNewestBook()
         {
